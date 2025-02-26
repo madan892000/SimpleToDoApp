@@ -1,0 +1,218 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Authentication Container */
+.auth-container {
+  background: #ffffff;
+  padding: 20px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.auth-container input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 48%;
+  margin: 10px 1%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.auth-container button:nth-child(3) {
+  background: #28a745;
+  color: white;
+}
+
+.auth-container button:nth-child(4) {
+  background: #007bff;
+  color: white;
+}
+
+.auth-container button:hover {
+  opacity: 0.8;
+}
+
+/* Main Container */
+.container {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Logout Button */
+.logout {
+  float: right;
+  padding: 8px 12px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout:hover {
+  background: darkred;
+}
+
+/* To-Do Form */
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-form input,
+.todo-form select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.todo-form button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.todo-form button:hover {
+  background: #0056b3;
+}
+
+/* Filter Section */
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section input {
+  width: 45%;
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter-section button {
+  padding: 8px 12px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filter-section button:hover {
+  background: #218838;
+}
+
+/* Status Counts */
+.status-counts {
+  text-align: left;
+  margin: 20px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.status-counts p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+/* To-Do List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li span {
+  flex: 1;
+}
+
+li button {
+  padding: 6px 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+li button:hover {
+  background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+      width: 90%;
+  }
+
+  .auth-container {
+      width: 90%;
+  }
+
+  .todo-form input,
+  .todo-form select,
+  .filter-section input {
+      width: 100%;
+  }
+
+  .filter-section button {
+      width: 100%;
+      margin-top: 5px;
+  }
+}
