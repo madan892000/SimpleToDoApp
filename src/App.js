@@ -13,6 +13,7 @@ function App() {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [statusCounts, setStatusCounts] = useState(null);
+    const [ErrMsg, setErrMsg] = useState(true);
 
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -70,6 +71,10 @@ function App() {
 
     const calculateStatusCounts = () => {
         const filteredTodos = filterTodosByDate();
+        if (startDate === "" || endDate === ""){
+            setErrMsg(true)
+        }
+        setErrMsg(false);
         const counts = { Pending: 0, InProgress: 0, Completed: 0 };
         filteredTodos.forEach(todo => counts[todo.status]++);
         setStatusCounts(counts);
@@ -119,13 +124,15 @@ function App() {
                         <button onClick={calculateStatusCounts}>Show Count</button>
                     </div>
 
-                    {statusCounts && (
-                        <div className="status-counts">
-                            <p>Pending: {statusCounts.Pending}</p>
-                            <p>In Progress: {statusCounts.InProgress}</p>
-                            <p>Completed: {statusCounts.Completed}</p>
-                        </div>
-                    )}
+                    {
+                        ErrMsg ? (<p>The start and end date need to be mentioned for the count to be displayed</p>) : (statusCounts && (
+                            <div className="status-counts">
+                                <p>Pending: {statusCounts.Pending}</p>
+                                <p>In Progress: {statusCounts.InProgress}</p>
+                                <p>Completed: {statusCounts.Completed}</p>
+                            </div>
+                        ))
+                    }
 
                     <ul>
                         {filterTodosByDate().map(todo => (
