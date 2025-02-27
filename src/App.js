@@ -13,7 +13,7 @@ function App() {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [statusCounts, setStatusCounts] = useState(null);
-    const [ErrMsg, setErrMsg] = useState(true);
+    const [ErrMsg, setErrMsg] = useState(false);
 
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -73,6 +73,7 @@ function App() {
         const filteredTodos = filterTodosByDate();
         if (startDate === "" || endDate === ""){
             setErrMsg(true)
+            return;
         }
         setErrMsg(false);
         const counts = { Pending: 0, InProgress: 0, Completed: 0 };
